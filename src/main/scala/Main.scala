@@ -21,6 +21,6 @@ object Main extends App {
   val query = new FilterQuery language Array("en") track searchTerms
   val store = new TweetStore 
   statusStream.addListener(store)
-  statusStream.filter(query)
+  statusStream.sample("en")
   println("Now listening for statuses...")
 }
