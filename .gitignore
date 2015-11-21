@@ -1,0 +1,10 @@
+target/
+*.class
+*.iml
+*.ipr
+*.iws
+.idea
+.env
+out
+/src/main/resources/local.conf
+*~
