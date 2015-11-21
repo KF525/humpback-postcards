@@ -16,7 +16,6 @@ object Main extends App {
     .build()
 
   val twitter = new TwitterFactory(config).getInstance
-  val userStream = new TwitterStreamFactory(config).getInstance
   val statusStream = new TwitterStreamFactory(config).getInstance
   val searchTerms: Array[String] = Array("wow")
   val query = new FilterQuery language Array("en") track searchTerms
@@ -24,11 +23,4 @@ object Main extends App {
   statusStream.addListener(store)
   statusStream.filter(query)
   println("Now listening for statuses...")
-
-  userStream.addListener(new AdaListener(twitter))
-  userStream.user()
-  println("Now listening to twitter...")
 }
-
-
-// Natural Language APIs http://blog.mashape.com/list-of-25-natural-language-processing-apis/
